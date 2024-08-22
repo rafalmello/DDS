@@ -20,14 +20,12 @@ public class Funcionario extends Pessoa {
 
     Scanner scanner = new Scanner(System.in);
 
-    public Funcionario(String cpf, String nome, String endereco,  String cargo, double salario) {
+    public Funcionario(String cpf, String nome, String endereco, String cargo, double salario) {
         super(cpf, nome, endereco);
-
         this.cargo = cargo;
         this.salario = salario;
+
     }
-
-
 
     public String getCargo() {
         return cargo;
@@ -81,6 +79,16 @@ public class Funcionario extends Pessoa {
                 ", cargo='" + cargo + '\'' +
                 ", salario=" + salario +
                 '}';
+    }
+
+
+
+    public Setor getSetor() {
+        return setor;
+    }
+
+    public void setSetor(Setor setor) {
+        this.setor = setor;
     }
 }
 

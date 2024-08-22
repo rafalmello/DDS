@@ -156,20 +156,30 @@ public class GerenciamentoGerente extends GerenciamentoPessoa{
     @Override
     public String delete() {
         String mensagem = "";
+
+        if (gerentes.isEmpty()){
+            mensagem = "Sem gerentes cadastrados";
+            return  mensagem;
+        }
+
+
+        System.out.println(" Cpf dos gerentes");
+        for (Gerente gerente: gerentes) {
+            System.out.println(" O gerente se chama: "+gerente.getNome()+ " e o Cpf dele é:  " + gerente.getCpf() );
+        }
+
         System.out.println("insira o cpf do gerente: ");
         String cpf = scanner.nextLine();
-        String resposta;
+
+
         for (Gerente gerente: gerentes) {
-            if (cpf == gerente.getCpf()){
+            if (cpf.equalsIgnoreCase(gerente.getCpf())){
                 gerentes.remove(gerente);
                 mensagem = "Gerente removido com sucesso";
                 return mensagem;
             }
         }
-        if (gerentes.isEmpty()){
-            resposta = "Sem gerentes cadastrados";
-            return  resposta;
-        }
+
 
         mensagem = "gerente não encontrado";
         return mensagem;

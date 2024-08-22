@@ -5,9 +5,9 @@ import java.util.List;
 public abstract class Pessoa {
 
 
-    private String cpf ;
-    private String nome;
-    private String endereco;
+    protected String cpf ;
+    protected String nome;
+    protected String endereco;
 
     private static List<? extends Pessoa> pessoas;
 

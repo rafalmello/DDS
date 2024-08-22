@@ -19,11 +19,12 @@ public class Gerente extends Pessoa{
 
 
 
+
     public Gerente(String cpf, String nome, String endereco, String cargo, double salario, int quantSubordinados/*, Setor setor*/) {
         super(cpf, nome, endereco);
         this.cargo = cargo;
         this.salario = salario;
-        //this.setor = setor;
+        this.cpf = cpf;
         this.quantSubordinados = quantSubordinados;
     }
 
@@ -86,11 +87,21 @@ public class Gerente extends Pessoa{
 
     @Override
     public String toString() {
-        return "Gerente{" +
+        String gerente ="Gerente{" +
                 "cargo='" + cargo + '\'' +
-                ", salario= " + salario +
-                ", quantSubordinados= " + quantSubordinados +
-                ", setor= " + setor + '\'' +
+                ", salario=" + salario +
+                ", quantSubordinados=" + quantSubordinados;
+        if(setor != null){
+            gerente = gerente + ", setor=" + setor.getNomeSetor() +", cpf='" + cpf + '\'' +
+                    ", nome='" + nome + '\'' +
+                    ", endereco='" + endereco + '\'' +
+                    '}';
+            return gerente;
+        }
+        return gerente +
+                ", cpf='" + cpf + '\'' +
+                ", nome='" + nome + '\'' +
+                ", endereco='" + endereco + '\'' +
                 '}';
     }
 }

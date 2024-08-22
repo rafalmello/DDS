@@ -5,12 +5,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class GerenciamentoFuncionario extends  GerenciamentoPessoa{
-    private List<Funcionario> funcionarios = new ArrayList<Funcionario>();
+    private static List<Funcionario> funcionarios = new ArrayList<Funcionario>();
 
     Scanner scanner = new Scanner(System.in);
 
-    public GerenciamentoFuncionario() {
-    }
+    // era aq o erro a principio
+    /*public GerenciamentoFuncionario() {
+    }*/
     public void insert(Funcionario funcionario){
         funcionarios.add(funcionario);
     }
@@ -36,7 +37,7 @@ public class GerenciamentoFuncionario extends  GerenciamentoPessoa{
 
 
 
-            funcionarios.add(funcionario);
+            funcionarios.add(funcionario);// ele está inserindo mas não no lugar certo
             System.out.println("funcionário inserio com sucesso");
 
         }else {
@@ -168,7 +169,7 @@ public class GerenciamentoFuncionario extends  GerenciamentoPessoa{
         return mensagem;
     }
 
-    public List<Funcionario> getFuncionarios() {
+    public static List<Funcionario> getFuncionarios() {
         return funcionarios;
     }
 
